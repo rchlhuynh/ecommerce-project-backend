@@ -23,6 +23,11 @@ const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+app.use(cors({
+  origin: ['https://ecommerce-project-j1x1.vercel.app', 'http://localhost:5173'], // allows both local dev and your live Vercel site
+  credentials: true
+}));
+
 // Middleware
 app.use(cors());
 app.use(express.json());
